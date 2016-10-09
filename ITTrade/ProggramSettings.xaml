@@ -1,0 +1,92 @@
+﻿<Window x:Class="ITTrade.ProgramSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ittrade="clr-namespace:ITTrade"
+    Title="Параметры оборудования" Height="600" Width="600"
+	 >
+
+	<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+		<StackPanel Name="SettingsRootStackPanel" DataContext="{x:Static ittrade:ApparatSettings.Current}">
+			<TextBox Style="{StaticResource Texted}" TextAlignment="Center" Text="Установите параметры оборудования." FontSize="14" FontWeight="Bold" />
+
+			<StackPanel Margin="0,10,0,0">
+				<TextBox Style="{StaticResource Texted}" Text="Выберите порты к которым подключаются сканеры штрихкодов:" />
+				<!--<ListBox Name="BarcodeScanerPoptNames" SelectionMode="Multiple" Padding="2,1" />-->
+				<ListBox
+					Name="BarcodeScanerPoptNamesListBox"
+					SelectionMode="Multiple"
+					Margin="10"
+					ItemsSource="{x:Static ittrade:ApparatSettings.PortNames}"
+					>
+					
+					<ItemsControl.Resources>
+						<RadialGradientBrush x:Key="{x:Static SystemColors.HighlightBrushKey}">
+							<RadialGradientBrush.GradientStops>
+								<GradientStop Color="Transparent" Offset="0.0" />
+								<GradientStop Color="Red" Offset="0.8" />
+							</RadialGradientBrush.GradientStops>
+						</RadialGradientBrush>
+						<RadialGradientBrush x:Key="{x:Static SystemColors.ControlBrushKey}">
+							<RadialGradientBrush.GradientStops>
+								<GradientStop Color="Transparent" Offset="0.0" />
+								<GradientStop Color="Red" Offset="0.8" />
+							</RadialGradientBrush.GradientStops>
+						</RadialGradientBrush>
+					</ItemsControl.Resources>
+					
+					<ItemsControl.Template>
+						<ControlTemplate TargetType="ItemsControl">
+							<Border BorderBrush="LightBlue" BorderThickness="1" CornerRadius="15">
+								<ItemsPresenter/>
+							</Border>
+						</ControlTemplate>
+					</ItemsControl.Template>
+
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<WrapPanel />
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<DataTemplate.Resources>
+								<Style TargetType="TextBlock">
+									<Setter Property="FontSize" Value="18"/>
+									<Setter Property="HorizontalAlignment" Value="Center"/>
+								</Style>
+							</DataTemplate.Resources>
+							<Grid>
+								<Ellipse Fill="Silver"/>
+								<TextBlock Margin="15" Text="{Binding}"/>
+							</Grid>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+
+					<ItemsControl.ItemContainerStyle>
+						<Style>
+							<Setter Property="Control.Margin" Value="5"/>
+						</Style>
+					</ItemsControl.ItemContainerStyle>
+
+				</ListBox>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+				<TextBox Style="{StaticResource Texted}" Text="Принтер штрихкодов:" />
+				<TextBox Name="BarcodePrinterNameTextBox" Style="{StaticResource Texted}" FontWeight="Bold" Text="{Binding Path=BarcodePrinterName }" />
+				<Button Content="Выбрать" Margin="10,0,0,0" Click="BarcodePrinterNameTextBoxSelect_Click" />
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+				<TextBox Style="{StaticResource Texted}" Text="Принтер:" />
+				<TextBox Style="{StaticResource Texted}" Text="Используется принтер по умолчанию в системе." />
+				
+				<TextBox Visibility="Collapsed" Name="PrinterNameTextBox" Style="{StaticResource Texted}" FontWeight="Bold" Text="{Binding Path=PrinterName}" />
+				<Button Visibility="Collapsed" Content="Выбрать" Margin="10,0,0,0" Click="PrinterNameTextBoxSelect_Click" />
+			</StackPanel>
+			
+			<Button Content="Сохранить / Применить" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" Margin="30" Click="ApplySettings_Click" />
+		</StackPanel>
+	</ScrollViewer>
+</Window>

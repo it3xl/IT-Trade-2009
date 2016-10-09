@@ -1,0 +1,23 @@
+Code39Azalea : demo Code 39 TrueType font
+Copyright 2005 Jerry Whiting. All rights reserved.
+
+Code39Azalea is a TrueType font that creates Code 39 bar codes. This is a demo font from our C39Tools font package at www.azalea.com/Code39
+
+The full retail version of C39Tools contains 27 different Code 39 barcode fonts, an OCR-B font for the optional human-readable digits, sample code for applications like Crystal Reports, Excel, Access, Visual Basic, C/C++, etc, and full documentation. C39Tools is available for Windows, the Macintosh, Linux, UNIX, and other platforms.
+
+C39Azalea is a subset of the full 44-character set. It contains the digits 0-9 and the asterisk used as the start and stop bar. Create barcodes by adding an asterisk before and after your numeric string. Format "*314159265*" in Code39Azalea and it will scan as "314159265".
+
+The point size you use determines the height of the bars. We recommend using Code39Azalea at 18 points minimum.
+
+You can use Code39Azalea on one computer. You may not resell or redistribute it to others. Please purchase C39Tools if you want to bundle our fonts with your application.
+
+If you want to use Code39Azalea within another application the following function accepts a numeric string and adds the necessary start and stop bar.
+
+Function AzaleaCode39(ByVal yourNumericInput as String) as String
+' Code39Azalea 01dec05 Copyright 2005 Jerry Whiting.  All rights reserved.
+' Azalea Software, Inc.  www.azalea.com/Code39
+' The input is a numeric string, the digits 0-9.
+' Format the output, AzaleaCode39, using the Code39Azalea font.
+  AzaleaCode39 = "*" + yourNumericInput + "*"
+End Function
+

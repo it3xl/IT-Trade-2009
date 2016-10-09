@@ -1,0 +1,36 @@
+READ THIS LICENSING AGREEMENT CAREFULLY BEFORE USING A FONT FROM AZALEA SOFTWARE, INC.  BY INSTALLING THIS FONT, YOU INDICATE YOUR ACCEPTANCE OF THE TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT.  IF YOU DO NOT ACCEPT AND AGREE TO ALL OF THE TERMS AND CONDITIONS, PROMPTLY RETURN THE UNINSTALLED FONT AND ALL RELATED MATERIALS TO THE PLACE YOU OBTAINED THEM.  YOUR MONEY WILL BE RETURNED IN FULL.
+
+Azalea Software, Inc. Licensing Agreement
+
+1. License.  Azalea Software, Inc. ("Azalea") grants you a limited license to use the enclosed font(s), associated software, user manuals, and any related materials (collectively called the "Software" in this Agreement).  You may only use the Software on a single computer at any one time.  You may use the Software on different computers but the same software may not be used on two or more computers simultaneously.  You may not electronically transfer or share the Software from one computer to another via modem, network, or any other means.
+
+You may make one copy of this software for backup purposes or to transfer the software to a single hard disk provided you use the original for backup purposes.
+
+You may transfer a copy the Software and your rights under this License Agreement to a second person only if: (a) the second person agrees to all of the terms of this License Agreement; (b) you transfer the Software and documentation to the new user; (c) you erase or destroy all other copies of the Software which are in your possession or under your control; (d) you provide Azalea with thirty (30) days advance written notice of the transfer.
+
+You may not alter, modify, translate or adapt any part of the Software or related documentation without prior written consent of Azalea.  You may not disassemble, decompile, or otherwise reverse-engineer the Software, or create derivative works from it, whether in human-perceivable or machine-readable form.
+
+This Agreement does not convey any ownership of the Software or of any copy of the Software to you, but only the right to use the Software in strict accordance with this Agreement.  You acknowledge and agree that Azalea retains all title and ownership in the Software and any modifications, enhancements, updates or derivatives of the Software.
+
+2. Proprietary Rights.  The Software is the valuable trade secret property of Azalea and all Software bearing a copyright notice is, in addition, subject to the copyright laws.  UNAUTHORIZED COPYING, USE, OR DISCLOSURE OF THE SOFTWARE IS AN INFRINGEMENT OF AZALEA'S COPYRIGHT AND TRADE SECRET RIGHTS.  You agree that the use of a copyright notice on the Software shall not be taken to indicate that the Software has been published.
+
+3. Money-Back Guarantee and Limited Warranty.  For a period of thirty (30) days from the date of you obtained the Software, you may return the Software (including all user manuals), together with your receipt showing the amount you paid and the date you obtained the Software to the place of purchase, and obtain a full refund of the amounts you paid.
+
+Azalea warrants that the magnetic diskette(s) on which the Software is recorded is free from defects in materials and workmanship under normal use.  Azalea warrants that the Software will perform substantially in accordance with the specifications set forth in the documentation provided with the Software.
+
+The above warranties extend for ninety (90) days from the date of original delivery to customer as the user.  This warranty is made to customer if customer is the original licensed end-user.  No warranty is made to any other person.  Azalea does not warrant that the Software will meet customer's requirements or that the operation of the Software will not be uninterrupted or error-free.  The Software warranty does not cover any Software which has been altered or changed in any way by anyone other than Azalea.
+
+THE WARRANTIES SET FORTH ABOVE ARE IN LIEU OF ALL OTHER IMPLIED AND EXPRESS WARRANTIES, WHETHER ORAL OR WRITTEN.  AZALEA DISCLAIMS ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.  THE AGENTS, EMPLOYEES, DISTRIBUTORS AND DEALERS OF AZALEA ARE NOT AUTHORIZED TO MAKE ANY MODIFICATIONS TO THESE WARRANTIES, NOR ADDITIONAL WARRANTIES BINDING ON AZALEA.  ACCORDINGLY, ADDITIONAL STATEMENTS SUCH AS DEALER ADVERTISING OR REPRESENTATIONS, WHETHER ORAL OR WRITTEN, DO NOT CONSTITUTE WARRANTIES BY AZALEA AND SHOULD NOT BE RELIED UPON AS A WARRANTY OF AZALEA.
+
+4. Customer Remedies and Limitations of Liability.  During the warranty 
+period, Azalea will replace, without charge, on an exchange basis, any magnetic diskette which is not as warranted.  During the warranty period, if the Software does not perform as warranted, Azalea at its sole option will (a) provide, without charge, corrected software, (b) replace, without charge, software with a functionally similar program, or (c) refund the fees paid for licensing the software.  These are your sole and exclusive remedies for any breach of warranty.  You must return the defective item post-paid, postmarked within the time period stated above.  You must either insure the defective item being returned or assume the risk of loss or damage in transit.  Address all warranty claims to: Warranty Service Department, Azalea Software, Inc., 3400 Harbor Ave SW, #411, Seattle, WA, 98126, U.S.A.  Any claim under the above warranty must include a copy of your receipt or invoice or other proof of the date of delivery.  AZALEA SHALL NOT IN ANY CASE BE LIABLE FOR SPECIAL, INCIDENTAL, CONSEQUENTIAL, INDIRECT, OR OTHER DAMAGES ARISING FROM ANY BREACH OF THESE WARRANTIES, BREACH OF CONTRACT, NEGLIGENCE, OR ANY OTHER LEGAL THEORIES, EVEN IF AZALEA OR ITS AGENT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  IN NO CASE SHALL AZALEA'S LIABILITY EXCEED THE LICENSE FEES PAID BY YOU FOR THE SOFTWARE.
+
+5. Miscellaneous.  This Agreement shall be governed by the laws of the State of Washington, U.S.A. (not including laws relating to choice of law).  You and Azalea consent to the jurisdiction of and venue in the state and federal courts located in King County, Washington, U.S.A., in connection with any suit or action brought regarding the Software or this Agreement.  If any legal action is brought by either party against the other regarding the subject matter of this Agreement, the prevailing party shall be entitled to recover, in addition to any other relief, reasonable attorneys' fees and expenses.
+
+COPYRIGHT NOTICE
+
+Copyright 2005 Jerry Whiting. All rights reserved.
+Azalea Software, Inc.
+3400 Harbor Ave SW #411
+Seattle WA  98126
+www.azalea.com

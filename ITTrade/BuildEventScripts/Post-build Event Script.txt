@@ -1,0 +1,22 @@
+
+Файл для хранения текста скрипта, выполняемого после успешного билда.
+Используется в Свойства проекта -> Build Events -> Post-build Event Command Line.
+_____________________________________________________________________
+
+Rem
+Rem Начало скрипта для подготовки папки публикации.
+Echo !!! Подготовка папки публикации через Build Events, через Post-build Event Command Line.
+Echo Начало складывания компонентов в папку публикации "$(SolutionDir)!Output\"
+Echo Копируем конфигурационный файл ITTrade.exe.config в папку публикации.
+copy "$(TargetPath)".config "$(SolutionDir)!Output\ITTrade.exe.config"
+Echo Копируем сборку WPFToolkit.dll в папку публикации, т.к. ее не получилось корректно объединить с другими сборками.
+copy "$(TargetDir)WPFToolkit.dll" "$(SolutionDir)!Output\WPFToolkit.dll"
+Echo Объединяем в ITTrade.exe все сборки, которые возможно объединить.
+ilmerge /out:"$(SolutionDir)!Output\ITTrade.exe" "$(TargetPath)" "$(TargetDir)Neodynamic.WPF.Barcode.dll"
+Echo Удаляем файл ITTrade.pdb полученный после объединения.
+del "$(SolutionDir)!Output\ITTrade.pdb"
+Echo Завершено. Папка публикации подготовлена в "$(SolutionDir)!Output\".
+Rem Окончание скрипта для подготовки папки публикации.
+
+
+

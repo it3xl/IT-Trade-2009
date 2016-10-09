@@ -1,0 +1,73 @@
+;Copyright (c) 2002-2006 Metrologic Instruments, Inc.
+
+[Version]
+Signature=$CHICAGO$
+Class=Ports
+ClassGuid={4d36e978-e325-11ce-bfc1-08002be10318}
+Provider=%MTLG%
+
+[SourceDisksFiles]
+mtlgpos.sys=1
+mtlgposprops.dll=1
+
+[SourceDisksNames]
+1=%INSTDISK%,,,
+
+[DestinationDirs]
+SYS.CopyList=10,system32\drivers
+DLL.CopyList=10,system32
+
+[Manufacturer]
+"Metrologic Instruments"=DeviceList
+
+[DeviceList]
+%GENERIC%=DriverInstall,USB\VID_0C2E&PID_0700
+%MX009%=DriverInstall,USB\VID_0C2E&PID_0701
+%5145%=DriverInstall,USB\VID_0C2E&PID_0702
+%7200%=DriverInstall,USB\VID_0C2E&PID_0703
+%7300%=DriverInstall,USB\VID_0C2E&PID_0704
+%7600%=DriverInstall,USB\VID_0C2E&PID_0705
+
+;--------------------------------------------------------------------
+; Windows 2000 Section
+;--------------------------------------------------------------------
+
+[DriverInstall.NT]
+DriverVer=09/06/2006,1.1.0.2
+AddReg=DriverInstall.NT.AddReg
+CopyFiles=SYS.CopyList,DLL.CopyList
+
+[DriverInstall.NT.AddReg]
+HKR,,PortSubClass,1,01
+HKR,,EnumPropPages32,,"mtlgposprops.dll,MTLGPOSPropPageProvider"
+
+[SYS.CopyList]
+mtlgpos.sys
+
+[DLL.CopyList]
+mtlgposprops.dll
+
+[DriverInstall.NT.Services]
+AddService=MTLGPOS,2,DriverService
+
+[DriverService]
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%10%\system32\drivers\mtlgpos.sys
+
+[DriverInstall.HW.NT]
+
+;--------------------------------------------------------------------
+; Strings Section
+;--------------------------------------------------------------------
+
+[Strings]
+MTLG="Metrologic Instruments"
+INSTDISK="Metrologic USB Install Disk"
+GENERIC="Metrologic USB Scanner"
+MX009="Metrologic MX009"
+5145="Metrologic 5145"
+7200="Metrologic 7200"
+7300="Metrologic 7300"
+7600="Metrologic 7600"

@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51716157-25C2-4ABC-BC75-1DFC27BEAED8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITTrade</RootNamespace>
+    <AssemblyName>ITTrade</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkSubset>Full</TargetFrameworkSubset>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <PublishUrl>http://localhost/ITTrade/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>it.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Neodynamic.WPF.Barcode, Version=2.0.3000.0, Culture=neutral, PublicKeyToken=c6b33c3093a0d4cd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Dlls\Neodynamic.WPF.Barcode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationFramework.Classic">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ReachFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.Linq.dll</HintPath>
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Speech">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationTypes">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Controls\TopStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProductGroupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProggramSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TradeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="TradeWindow.xaml.cs">
+      <DependentUpon>TradeWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ApparatSettings.cs" />
+    <Compile Include="Business\ProductEditer.ManagersPurchase.cs" />
+    <Compile Include="Business\Invoice.cs" />
+    <Compile Include="Business\InvoiceMode.cs" />
+    <Compile Include="Business\InvoicesProduct.cs" />
+    <Compile Include="Business\ProductEditer.cs" />
+    <Compile Include="Business\ProductEditer.ManagersProduct.cs" />
+    <Compile Include="Controls\TopStatus.xaml.cs">
+      <DependentUpon>TopStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ITTradeDataSet.cs">
+      <DependentUpon>ITTradeDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ITTradeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITTradeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IT\ConfirmationsChain.cs" />
+    <Compile Include="IT\Delegates.cs" />
+    <Compile Include="IT\ExceptionUtils.cs" />
+    <Compile Include="IT\IO\BarcodeTransferedEventArgs.cs" />
+    <Compile Include="IT\IO\SerialPortWrapper.cs" />
+    <Compile Include="IT\IO\SerialPortManager.cs">
+    </Compile>
+    <Compile Include="IT\Loger.cs" />
+    <Compile Include="IT\Sounds.cs" />
+    <Compile Include="IT\TargetSound.cs" />
+    <Compile Include="IT\UIHelper.cs" />
+    <Compile Include="IT\WindowHelper.cs" />
+    <Compile Include="IT\WPF\Barcode\BarcodeHelper.cs" />
+    <Compile Include="IT\Exceptions.cs" />
+    <Compile Include="IT\WPF\Barcode\BarcodePrint.cs" />
+    <Compile Include="IT\WPF\Barcode\BarcodeType.cs" />
+    <Compile Include="IT\WPF\Barcode\BarcodeTypeUtils.cs" />
+    <Compile Include="IT\WPF\InvoicePrinting.cs" />
+    <Compile Include="IT\WPF\UI\DocumentPaginatorWithPageManipulations.cs" />
+    <Compile Include="IT\WPF\UI\TemplateManager.cs" />
+    <Compile Include="IT\WPF\ValidationRules\BarcodeValidationRule.cs" />
+    <Compile Include="IT\WPF\ValidationUtils.cs" />
+    <Compile Include="IT\WPF\ValueConverts\BooleanToVisibilityConverter.cs" />
+    <Compile Include="IT\WPF\ValueConverts\ColorForZeroConverter.cs" />
+    <Compile Include="IT\WPF\ValueConverts\DecimalPositiveConverter.cs" />
+    <Compile Include="IT\WPF\ValueConverts\DummyDebugConverter.cs" />
+    <Compile Include="IT\WPF\ValueConverts\ValidationErrorMessageConverter.cs" />
+    <Compile Include="IT\WPF\ValueConverts\DecimalConverter.cs" />
+    <Compile Include="IT\WPF\ValueConverts\IntPositiveConverter.cs" />
+    <Compile Include="IT\WPF\ValueConverts\StringToUpperCaseConverter.cs" />
+    <Compile Include="IT\WPF\ValueConverts\DoubleConverter.cs" />
+    <Compile Include="Lock.cs" />
+    <Compile Include="UniversalMessageContext.cs" />
+    <Compile Include="MessageWindow.xaml.cs">
+      <DependentUpon>MessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductGroup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductGroup.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductGroupWindow.xaml.cs">
+      <DependentUpon>ProductGroupWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IT\WPF\ValueConverts\DatetimeConverter.cs" />
+    <Compile Include="ProggramSettings.xaml.cs">
+      <DependentUpon>ProggramSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IT\WPF\WpfSingleInstance.cs" />
+    <Compile Include="ManagerWindow.xaml.cs">
+      <DependentUpon>ManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ManagerWindow.Utils.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="UniversalMessageButtonContext.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="ITTradeDataSet.xsc">
+      <DependentUpon>ITTradeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ITTradeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ITTradeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ITTradeDataSet.xss">
+      <DependentUpon>ITTradeDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="Models\ProductGroup.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProductGroup.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resources\Fonts\code39.ttf" />
+    <Resource Include="Resources\Fonts\code128.ttf" />
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WPFToolkitSourcesAndBinaries\Toolkit-release\WPFToolkit.csproj">
+      <Project>{9606A078-7135-4CE7-879E-39FCF527F1A3}</Project>
+      <Name>WPFToolkit</Name>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BuildEventScripts\Post-build Event Script.txt" />
+    <Resource Include="it.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IT\WPF\Controls\" />
+    <Folder Include="Themes\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>Rem
+Rem Начало скрипта для подготовки папки публикации.
+Echo !!! Подготовка папки публикации через Build Events, через Post-build Event Command Line.
+Echo Начало складывания компонентов в папку публикации "$(SolutionDir)!Output\"
+Echo Копируем конфигурационный файл ITTrade.exe.config в папку публикации.
+copy "$(TargetPath)".config "$(SolutionDir)!Output\ITTrade.exe.config"
+Echo Копируем сборку WPFToolkit.dll в папку публикации, т.к. ее не получилось корректно объединить с другими сборками.
+copy "$(TargetDir)WPFToolkit.dll" "$(SolutionDir)!Output\WPFToolkit.dll"
+Echo Объединяем в ITTrade.exe все сборки, которые возможно объединить.
+"$(ProjectDir)ilmerge" /out:"$(SolutionDir)!Output\ITTrade.exe" "$(TargetPath)" "$(TargetDir)Neodynamic.WPF.Barcode.dll"
+Echo Удаляем файл ITTrade.pdb полученный после объединения.
+del "$(SolutionDir)!Output\ITTrade.pdb"
+Echo Завершено. Папка публикации подготовлена в "$(SolutionDir)!Output\".
+Rem Окончание скрипта для подготовки папки публикации.
+</PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

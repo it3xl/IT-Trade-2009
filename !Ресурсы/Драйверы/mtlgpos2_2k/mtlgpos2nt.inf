@@ -1,0 +1,62 @@
+;Copyright (c) 2002-2007 Metrologic Instruments, Inc.
+
+[Version]
+Signature=$CHICAGO$
+Class=Ports
+ClassGuid={4d36e978-e325-11ce-bfc1-08002be10318}
+Provider=%MTLG%
+
+[SourceDisksFiles]
+mtlgpos2.sys=1
+mtlgpos2props.dll=1
+
+[SourceDisksNames]
+1=%INSTDISK%,,,
+
+[DestinationDirs]
+SYS.CopyList=10,system32\drivers
+DLL.CopyList=10,system32
+
+[Manufacturer]
+"Metrologic Instruments"=DeviceList
+
+[DeviceList]
+%GENERIC1%=DriverInstall,USB\VID_0C2E&PID_0720
+%GENERIC2%=DriverInstall,USB\VID_0C2E&PID_0720&MI_00
+
+[DriverInstall.NT]
+DriverVer=12/14/2007,1.2.0.7
+AddReg=DriverInstall.NT.AddReg
+CopyFiles=SYS.CopyList,DLL.CopyList
+
+[DriverInstall.NT.AddReg]
+HKR,,PortSubClass,1,01
+HKR,,EnumPropPages32,,"mtlgpos2props.dll,MTLGPOS2PropPageProvider"
+
+[SYS.CopyList]
+mtlgpos2.sys
+
+[DLL.CopyList]
+mtlgpos2props.dll
+
+[DriverInstall.NT.Services]
+AddService=MTLGPOS2,2,DriverService
+
+[DriverService]
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%10%\system32\drivers\mtlgpos2.sys
+
+[DriverInstall.HW.NT]
+
+;--------------------------------------------------------------------
+; Strings Section
+;--------------------------------------------------------------------
+
+[Strings]
+MTLG="Metrologic Instruments"
+INSTDISK="Metrologic USB Install Disk"
+GENERIC1="Metrologic USB Scanner"
+GENERIC2="Metrologic USB Scanner"
+

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ITTradeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="ITTradeModelStoreContainer">
+          <EntitySet Name="Product" EntityType="ITTradeModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductGroup" EntityType="ITTradeModel.Store.ProductGroup" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Product_ProductGroup" Association="ITTradeModel.Store.FK_Product_ProductGroup">
+            <End Role="ProductGroup" EntitySet="ProductGroup" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductGroupID" Type="int" Nullable="false" />
+          <Property Name="Article" Type="varchar" MaxLength="100" />
+          <Property Name="CurrentWholesalePrice" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="CurrentRetailPrice" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="DiscountForbidden" Type="bit" Nullable="false" />
+          <Property Name="CanDelete" Type="bit" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime2" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime2" Nullable="false" />
+          <Property Name="ProductBarcode" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ProductGroup">
+          <Key>
+            <PropertyRef Name="ProductGroupID" />
+          </Key>
+          <Property Name="ProductGroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="DateCreation" Type="datetime2" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Product_ProductGroup">
+          <End Role="ProductGroup" Type="ITTradeModel.Store.ProductGroup" Multiplicity="1" />
+          <End Role="Product" Type="ITTradeModel.Store.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductGroup">
+              <PropertyRef Name="ProductGroupID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductGroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ITTradeModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="ProductGroupEntities">
+          <EntitySet Name="Product" EntityType="ITTradeModel.Product" />
+          <EntitySet Name="ProductGroup" EntityType="ITTradeModel.ProductGroup" />
+          <AssociationSet Name="FK_Products_ProductGroups" Association="ITTradeModel.FK_Products_ProductGroups">
+            <End Role="ProductGroup" EntitySet="ProductGroup" />
+            <End Role="Product" EntitySet="Product" /></AssociationSet></EntityContainer>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" /></Key>
+          <Property Name="ProductID" Type="Int64" Nullable="false" />
+          <Property Name="Article" Type="String" Nullable="true" />
+          <Property Name="CurrentWholesalePrice" Type="Decimal" Nullable="false" />
+          <Property Name="CurrentRetailPrice" Type="Decimal" Nullable="false" />
+          <Property Name="DiscountForbidden" Type="Boolean" Nullable="false" />
+          <Property Name="CanDelete" Type="Boolean" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+          <Property Name="ModifyDate" Type="DateTime" Nullable="false" />
+          <Property Name="ProductBarcode" Type="String" Nullable="false" />
+          <NavigationProperty Name="ProductGroup" Relationship="ITTradeModel.FK_Products_ProductGroups" FromRole="Product" ToRole="ProductGroup" /></EntityType>
+        <EntityType Name="ProductGroup">
+          <Key>
+            <PropertyRef Name="ProductGroupID" /></Key>
+          <Property Name="ProductGroupID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="DateCreation" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="ITTradeModel.FK_Products_ProductGroups" FromRole="ProductGroup" ToRole="Product" /></EntityType>
+        <Association Name="FK_Products_ProductGroups">
+          <End Type="ITTradeModel.ProductGroup" Role="ProductGroup" Multiplicity="1" />
+          <End Type="ITTradeModel.Product" Role="Product" Multiplicity="*" /></Association></Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="ITTradeModelStoreContainer" CdmEntityContainer="ProductGroupEntities">
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="IsTypeOf(ITTradeModel.Product)">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductBarcode" ColumnName="ProductBarcode" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="CanDelete" ColumnName="CanDelete" />
+                <ScalarProperty Name="DiscountForbidden" ColumnName="DiscountForbidden" />
+                <ScalarProperty Name="CurrentRetailPrice" ColumnName="CurrentRetailPrice" />
+                <ScalarProperty Name="CurrentWholesalePrice" ColumnName="CurrentWholesalePrice" />
+                <ScalarProperty Name="Article" ColumnName="Article" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProductGroup">
+            <EntityTypeMapping TypeName="IsTypeOf(ITTradeModel.ProductGroup)">
+              <MappingFragment StoreEntitySet="ProductGroup">
+                <ScalarProperty Name="DateCreation" ColumnName="DateCreation" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_Products_ProductGroups" TypeName="ITTradeModel.FK_Products_ProductGroups" StoreEntitySet="Product">
+            <EndProperty Name="Product">
+              <ScalarProperty Name="ProductID" ColumnName="ProductID" /></EndProperty>
+            <EndProperty Name="ProductGroup">
+              <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" /></EndProperty></AssociationSetMapping></EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="ProductGroups">
+        <EntityTypeShape EntityType="ITTradeModel.Product" Width="1.5" PointX="3" PointY="1" Height="2.5783902994791665" />
+        <EntityTypeShape EntityType="ITTradeModel.ProductGroup" Width="1.5" PointX="0.75" PointY="1.5" Height="1.5923063151041668" />
+        <AssociationConnector Association="ITTradeModel.FK_Products_ProductGroups" >
+          <ConnectorPoint PointX="2.25" PointY="2.2961531575520833" />
+          <ConnectorPoint PointX="3" PointY="2.2961531575520833" /></AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

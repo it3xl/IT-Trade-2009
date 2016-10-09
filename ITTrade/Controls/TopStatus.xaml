@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="ITTrade.Controls.TopStatus"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	>
+
+	<UserControl.Resources>
+		<Style TargetType="Ellipse">
+			<Setter Property="Margin" Value="2,0,2,0"></Setter>
+			<Setter Property="Width" Value="16"></Setter>
+			<Setter Property="Height" Value="16"></Setter>
+		</Style>
+		
+		<!--<RadialGradientBrush x:Key="RedRadialGradientBrush" RadiusX="1" RadiusY="1" >
+			<GradientStop Color="White" Offset="0" />
+			<GradientStop Color="Red" Offset="1" />
+		</RadialGradientBrush>-->
+		
+		<RadialGradientBrush x:Key="BlueRadialGradientBrush" RadiusX="1" RadiusY="1" >
+			<GradientStop Color="White" Offset="0" />
+			<GradientStop Color="Blue" Offset="1" />
+		</RadialGradientBrush>
+	</UserControl.Resources>
+	
+	<StackPanel Orientation="Horizontal">
+		<!--<Ellipse Fill="{StaticResource RedRadialGradientBrush}">
+		</Ellipse>-->
+		
+		<Ellipse Fill="{StaticResource BlueRadialGradientBrush}" Name="FocusMarcker" ToolTip="Окно активно">
+		</Ellipse>
+	</StackPanel>
+</UserControl>

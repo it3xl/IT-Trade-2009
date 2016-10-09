@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ITTradeDataSet" targetNamespace="http://tempuri.org/ITTradeDataSet.xsd" xmlns:mstns="http://tempuri.org/ITTradeDataSet.xsd" xmlns="http://tempuri.org/ITTradeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ITTradeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ITTradeConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ITTrade.Properties.Settings.GlobalReference.Default.ITTradeConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProductTableAdapter" GeneratorDataComponentClassName="ProductTableAdapter" Name="Product" UserDataComponentName="ProductTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     Product.Article, Product.CanDelete, Product.CreationDate, Product.CurrentRetailPrice, Product.CurrentWholesalePrice,  Product.DiscountForbidden,
+                      Product.ModifyDate, Product.ProductBarcode, Product.ProductGroupID, Product.ProductID, ProductGroup.Name AS ProductGroupName
+FROM         Product INNER JOIN
+                      ProductGroup ON Product.ProductGroupID = ProductGroup.ProductGroupID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ProductID" DataSetColumn="ProductID" />
+              <Mapping SourceColumn="ProductBarcode" DataSetColumn="ProductBarcode" />
+              <Mapping SourceColumn="CurrentWholesalePrice" DataSetColumn="CurrentWholesalePrice" />
+              <Mapping SourceColumn="CurrentRetailPrice" DataSetColumn="CurrentRetailPrice" />
+              <Mapping SourceColumn="CanDelete" DataSetColumn="CanDelete" />
+              <Mapping SourceColumn="CreationDate" DataSetColumn="CreationDate" />
+              <Mapping SourceColumn="ModifyDate" DataSetColumn="ModifyDate" />
+              <Mapping SourceColumn="ProductGroupID" DataSetColumn="ProductGroupID" />
+              <Mapping SourceColumn="Article" DataSetColumn="Article" />
+              <Mapping SourceColumn="ProductGroupName" DataSetColumn="ProductGroupName" />
+              <Mapping SourceColumn="DiscountForbidden" DataSetColumn="DiscountForbidden" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByProductBarcode" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByProductBarcode" GeneratorSourceName="FillByProductBarcode" GetMethodModifier="Public" GetMethodName="GetDataByProductBarcode" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByProductBarcode" UserSourceName="FillByProductBarcode">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     Product.Article, Product.CanDelete, Product.CreationDate, Product.CurrentRetailPrice, Product.CurrentWholesalePrice, Product.DiscountForbidden, 
+                      Product.ModifyDate, Product.ProductBarcode, Product.ProductGroupID, Product.ProductID, ProductGroup.Name AS ProductGroupName
+FROM         Product INNER JOIN
+                      ProductGroup ON Product.ProductGroupID = ProductGroup.ProductGroupID
+WHERE     (Product.ProductBarcode = @ProductBarcode)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ProductBarcode" ColumnName="ProductBarcode" DataSourceName="ITTrade.dbo.Product" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@ProductBarcode" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="ProductBarcode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByProductBarcodePart" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByProductBarcodePart" GeneratorSourceName="FillByProductBarcodePart" GetMethodModifier="Public" GetMethodName="GetDataByProductBarcodePart" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByProductBarcodePart" UserSourceName="FillByProductBarcodePart">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TOP (50) pr.Article, pr.ProductBarcode, pr.CanDelete, pr.CreationDate, pr.DiscountForbidden, pr.ModifyDate, pr.ProductGroupID, pr.ProductID, 
+                      pr.CurrentWholesalePrice, pr.CurrentRetailPrice, prg.Name AS ProductGroupName
+FROM         Product AS pr INNER JOIN
+                      ProductGroup AS prg ON pr.ProductGroupID = prg.ProductGroupID
+WHERE     (pr.ProductBarcode LIKE '%' + @ProductBarcodePart + '%')
+ORDER BY pr.ModifyDate DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ProductBarcodePart" ColumnName="ProductBarcode" DataSourceName="ITTrade.dbo.Product" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@ProductBarcodePart" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="ProductBarcode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByProductID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByProductID" GeneratorSourceName="FillByProductID" GetMethodModifier="Public" GetMethodName="GetDataByProductID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByProductID" UserSourceName="FillByProductID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     pr.Article, pr.CanDelete, pr.CreationDate, pr.CurrentRetailPrice, pr.CurrentWholesalePrice, pr.ModifyDate, pr.ProductBarcode, pr.ProductGroupID, 
+                      pr.ProductID, ProductGroup.Name AS ProductGroupName, pr.DiscountForbidden
+FROM         Product AS pr INNER JOIN
+                      ProductGroup ON pr.ProductGroupID = ProductGroup.ProductGroupID
+WHERE     (pr.ProductID = @ProductID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ProductID" ColumnName="ProductID" DataSourceName="ITTrade.dbo.Product" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@ProductID" Precision="0" ProviderType="BigInt" Scale="0" Size="8" SourceColumn="ProductID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetIsProductBarcodeUnique" Modifier="Public" Name="GetIsProductBarcodeUnique" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetIsProductBarcodeUnique">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  ITTrade.dbo.Is_ProductBarcode_Unique(@productBarcode) AS val</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="productBarcode" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@productBarcode" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetIsProductCanDelete" Modifier="Public" Name="GetIsProductCanDelete" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetIsProductCanDelete">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ITTrade.dbo.is_Product_CanDelete(@productId) AS val</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="productId" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Int64" Direction="Input" ParameterName="@productId" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectName="ITTrade.dbo.GetNewUniqueProductBarcode" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetNewUniqueProductBarcode" Modifier="Public" Name="GetNewUniqueProductBarcode" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetNewUniqueProductBarcode">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetNewUniqueProductBarcode</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="InputOutput" ParameterName="@NewUniqueProductBarcode" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectName="ITTrade.dbo.Product_Delete" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ProductDelete" Modifier="Public" Name="ProductDelete" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="ProductDelete">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Product_Delete</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@ProductID" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="InputOutput" ParameterName="@IsDone" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="InputOutput" ParameterName="@CantDoneMessage" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectName="ITTrade.dbo.Product_Save" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ProductSave" Modifier="Public" Name="ProductSave" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ProductSave">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Product_Save</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="InputOutput" ParameterName="@ProductID" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@ProductBarcode" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ProductGroupID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Article" Precision="0" ProviderType="VarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="decimal" DbType="Decimal" Direction="Input" ParameterName="@CurrentWholesalePrice" Precision="8" ProviderType="Decimal" Scale="2" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="decimal" DbType="Decimal" Direction="Input" ParameterName="@CurrentRetailPrice" Precision="8" ProviderType="Decimal" Scale="2" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@DiscountForbidden" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@CanDelete" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PurchaseTableAdapter" GeneratorDataComponentClassName="PurchaseTableAdapter" Name="Purchase" UserDataComponentName="PurchaseTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectName="ITTrade.dbo.Purchase" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Purchase] WHERE (([ProductID] = @Original_ProductID) AND ([PurchasePrice] = @Original_PurchasePrice) AND ([StockInTrade] = @Original_StockInTrade) AND ([CanDelete] = @Original_CanDelete) AND ([PurchaseID] = @Original_PurchaseID) AND ([CreationDate] = @Original_CreationDate) AND ([ModifyDate] = @Original_ModifyDate))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_ProductID" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="ProductID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_PurchasePrice" Precision="8" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="PurchasePrice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StockInTrade" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StockInTrade" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_CanDelete" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="CanDelete" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_PurchaseID" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="PurchaseID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_CreationDate" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="CreationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_ModifyDate" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="ModifyDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Purchase] ([ProductID], [PurchasePrice], [StockInTrade], [CanDelete], [CreationDate], [ModifyDate]) VALUES (@ProductID, @PurchasePrice, @StockInTrade, @CanDelete, @CreationDate, @ModifyDate);
+SELECT ProductID, PurchasePrice, StockInTrade, CanDelete, PurchaseID, CreationDate, ModifyDate FROM Purchase WHERE (PurchaseID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@ProductID" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="ProductID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@PurchasePrice" Precision="8" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="PurchasePrice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@StockInTrade" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StockInTrade" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@CanDelete" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="CanDelete" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@CreationDate" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="CreationDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@ModifyDate" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="ModifyDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ProductID, PurchasePrice, StockInTrade, CanDelete, PurchaseID, CreationDate, ModifyDate FROM Purchase</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Purchase] SET [ProductID] = @ProductID, [PurchasePrice] = @PurchasePrice, [StockInTrade] = @StockInTrade, [CanDelete] = @CanDelete, [CreationDate] = @CreationDate, [ModifyDate] = @ModifyDate WHERE (([ProductID] = @Original_ProductID) AND ([PurchasePrice] = @Original_PurchasePrice) AND ([StockInTrade] = @Original_StockInTrade) AND ([CanDelete] = @Original_CanDelete) AND ([PurchaseID] = @Original_PurchaseID) AND ([CreationDate] = @Original_CreationDate) AND ([ModifyDate] = @Original_ModifyDate));
+SELECT ProductID, PurchasePrice, StockInTrade, CanDelete, PurchaseID, CreationDate, ModifyDate FROM Purchase WHERE (PurchaseID = @PurchaseID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@ProductID" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="ProductID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@PurchasePrice" Precision="8" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="PurchasePrice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@StockInTrade" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StockInTrade" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@CanDelete" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="CanDelete" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@CreationDate" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="CreationDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@ModifyDate" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="ModifyDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_ProductID" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="ProductID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_PurchasePrice" Precision="8" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="PurchasePrice" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StockInTrade" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StockInTrade" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_CanDelete" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="CanDelete" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int64" Direction="Input" ParameterName="@Original_PurchaseID" Precision="0" ProviderType="BigInt" Scale="0" Size="0" SourceColumn="PurchaseID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_CreationDate" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="CreationDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime2" Direction="Input" ParameterName="@Original_ModifyDate" Precision="0" ProviderType="DateTime2" Scale="0" Size="0" SourceColumn="ModifyDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="PurchaseID" ColumnName="PurchaseID" DataSourceName="ITTrade.dbo.Purchase" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@PurchaseID" Precision="0" ProviderType="BigInt" Scale="0" Size="8" SourceColumn="PurchaseID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ProductID" DataSetColumn="ProductID" />
+              <Mapping SourceColumn="PurchasePrice" DataSetColumn="PurchasePrice" />
+              <Mapping SourceColumn="StockInTrade" DataSetColumn="StockInTrade" />
+              <Mapping SourceColumn="PurchaseID" DataSetColumn="PurchaseID" />
+              <Mapping SourceColumn="CanDelete" DataSetColumn="CanDelete" />
+              <Mapping SourceColumn="CreationDate" DataSetColumn="CreationDate" />
+              <Mapping SourceColumn="ModifyDate" DataSetColumn="ModifyDate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectName="ITTrade.dbo.Purchase" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByProductID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByProductID" GeneratorSourceName="FillByProductID" GetMethodModifier="Public" GetMethodName="GetDataByProductID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByProductID" UserSourceName="FillByProductID">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     CanDelete, CreationDate, ModifyDate, ProductID, StockInTrade, PurchaseID, PurchasePrice 
+FROM         Purchase
+WHERE     (ProductID = @ProductID)
+ORDER BY CreationDate DESC
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ProductID" ColumnName="ProductID" DataSourceName="ITTrade.dbo.Purchase" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@ProductID" Precision="0" ProviderType="BigInt" Scale="0" Size="8" SourceColumn="ProductID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetIsPurchaseCanDelete" Modifier="Public" Name="GetIsPurchaseCanDelete" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetIsPurchaseCanDelete">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ITTrade.dbo.is_Purchase_CanDelete(@PurchaseID) AS val</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="PurchaseID" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Int64" Direction="Input" ParameterName="@PurchaseID" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNoCreationDate" Modifier="Public" Name="InsertNoCreationDate" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertNoCreationDate">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO Purchase
+                      (ProductID, PurchasePrice, StockInTrade)
+VALUES     (@ProductID,@PurchasePrice,@StockInTrade); 
+SELECT PurchaseID, ProductID, PurchasePrice, StockInTrade, CreationDate FROM Purchase WHERE (PurchaseID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="ProductID" ColumnName="ProductID" DataSourceName="ITTrade.dbo.Purchase" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@ProductID" Precision="0" ProviderType="BigInt" Scale="0" Size="8" SourceColumn="ProductID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="PurchasePrice" ColumnName="PurchasePrice" DataSourceName="ITTrade.dbo.Purchase" DataTypeServer="decimal(8, 2)" DbType="Decimal" Direction="Input" ParameterName="@PurchasePrice" Precision="8" ProviderType="Decimal" Scale="2" Size="5" SourceColumn="PurchasePrice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="StockInTrade" ColumnName="StockInTrade" DataSourceName="ITTrade.dbo.Purchase" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StockInTrade" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="StockInTrade" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectName="ITTrade.dbo.Purchase_Delete" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PurchaseDelete" Modifier="Public" Name="PurchaseDelete" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="PurchaseDelete">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Purchase_Delete</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@PurchaseID" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="InputOutput" ParameterName="@IsDone" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="InputOutput" ParameterName="@CantDoneMessage" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ITTradeConnectionString (Settings)" DbObjectName="ITTrade.dbo.Purchase_Save" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PurchaseSave" Modifier="Public" Name="PurchaseSave" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="PurchaseSave">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Purchase_Save</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="InputOutput" ParameterName="@PurchaseID" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="Input" ParameterName="@ProductID" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="decimal" DbType="Decimal" Direction="Input" ParameterName="@PurchasePrice" Precision="8" ProviderType="Decimal" Scale="2" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StockInTrade" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@CanDelete" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ITTradeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ITTradeDataSet" msprop:Generator_DataSetName="ITTradeDataSet" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Product" msprop:Generator_UserTableName="Product" msprop:Generator_RowDeletedName="ProductRowDeleted" msprop:Generator_RowChangedName="ProductRowChanged" msprop:Generator_RowClassName="ProductRow" msprop:Generator_RowChangingName="ProductRowChanging" msprop:Generator_RowEvArgName="ProductRowChangeEvent" msprop:Generator_RowEvHandlerName="ProductRowChangeEventHandler" msprop:Generator_TableClassName="ProductDataTable" msprop:Generator_TableVarName="tableProduct" msprop:Generator_RowDeletingName="ProductRowDeleting" msprop:Generator_TablePropName="Product">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProductID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ProductID" msprop:Generator_ColumnVarNameInTable="columnProductID" msprop:Generator_ColumnPropNameInRow="ProductID" msprop:Generator_ColumnPropNameInTable="ProductIDColumn" type="xs:long" />
+              <xs:element name="ProductBarcode" msprop:Generator_UserColumnName="ProductBarcode" msprop:nullValue="_throw" msprop:Generator_ColumnVarNameInTable="columnProductBarcode" msprop:Generator_ColumnPropNameInTable="ProductBarcodeColumn" msprop:Generator_ColumnPropNameInRow="ProductBarcode" default="">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CurrentWholesalePrice" msprop:Generator_UserColumnName="CurrentWholesalePrice" msprop:Generator_ColumnVarNameInTable="columnCurrentWholesalePrice" msprop:Generator_ColumnPropNameInRow="CurrentWholesalePrice" msprop:Generator_ColumnPropNameInTable="CurrentWholesalePriceColumn" type="xs:decimal" default="0" />
+              <xs:element name="CurrentRetailPrice" msprop:Generator_UserColumnName="CurrentRetailPrice" msprop:Generator_ColumnVarNameInTable="columnCurrentRetailPrice" msprop:Generator_ColumnPropNameInRow="CurrentRetailPrice" msprop:Generator_ColumnPropNameInTable="CurrentRetailPriceColumn" type="xs:decimal" default="0" />
+              <xs:element name="CanDelete" msprop:Generator_UserColumnName="CanDelete" msprop:Generator_ColumnVarNameInTable="columnCanDelete" msprop:Generator_ColumnPropNameInRow="CanDelete" msprop:Generator_ColumnPropNameInTable="CanDeleteColumn" type="xs:boolean" default="true" />
+              <xs:element name="CreationDate" msdata:ReadOnly="true" msprop:Generator_UserColumnName="CreationDate" msprop:Generator_ColumnPropNameInRow="CreationDate" msprop:Generator_ColumnVarNameInTable="columnCreationDate" msprop:Generator_ColumnPropNameInTable="CreationDateColumn" type="xs:dateTime" />
+              <xs:element name="ModifyDate" msprop:Generator_UserColumnName="ModifyDate" msprop:Generator_ColumnVarNameInTable="columnModifyDate" msprop:Generator_ColumnPropNameInRow="ModifyDate" msprop:Generator_ColumnPropNameInTable="ModifyDateColumn" type="xs:dateTime" />
+              <xs:element name="ProductGroupID" msprop:Generator_UserColumnName="ProductGroupID" msprop:nullValue="-1" msprop:Generator_ColumnVarNameInTable="columnProductGroupID" msprop:Generator_ColumnPropNameInTable="ProductGroupIDColumn" msprop:Generator_ColumnPropNameInRow="ProductGroupID" type="xs:int" minOccurs="0" />
+              <xs:element name="Article" msprop:Generator_UserColumnName="Article" msprop:nullValue="_null" msprop:Generator_ColumnPropNameInRow="Article" msprop:Generator_ColumnPropNameInTable="ArticleColumn" msprop:Generator_ColumnVarNameInTable="columnArticle" type="xs:string" minOccurs="0" />
+              <xs:element name="ProductGroupName" msprop:Generator_UserColumnName="ProductGroupName" msprop:Generator_ColumnVarNameInTable="columnProductGroupName" msprop:Generator_ColumnPropNameInRow="ProductGroupName" msprop:Generator_ColumnPropNameInTable="ProductGroupNameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DiscountForbidden" msprop:Generator_UserColumnName="DiscountForbidden" msprop:Generator_ColumnVarNameInTable="columnDiscountForbidden" msprop:Generator_ColumnPropNameInRow="DiscountForbidden" msprop:Generator_ColumnPropNameInTable="DiscountForbiddenColumn" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Purchase" msprop:Generator_UserTableName="Purchase" msprop:Generator_RowDeletedName="PurchaseRowDeleted" msprop:Generator_RowChangedName="PurchaseRowChanged" msprop:Generator_RowClassName="PurchaseRow" msprop:Generator_RowChangingName="PurchaseRowChanging" msprop:Generator_RowEvArgName="PurchaseRowChangeEvent" msprop:Generator_RowEvHandlerName="PurchaseRowChangeEventHandler" msprop:Generator_TableClassName="PurchaseDataTable" msprop:Generator_TableVarName="tablePurchase" msprop:Generator_RowDeletingName="PurchaseRowDeleting" msprop:Generator_TablePropName="Purchase">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProductID" msprop:Generator_UserColumnName="ProductID" msprop:Generator_ColumnVarNameInTable="columnProductID" msprop:Generator_ColumnPropNameInRow="ProductID" msprop:Generator_ColumnPropNameInTable="ProductIDColumn" type="xs:long" />
+              <xs:element name="PurchasePrice" msprop:Generator_UserColumnName="PurchasePrice" msprop:Generator_ColumnVarNameInTable="columnPurchasePrice" msprop:Generator_ColumnPropNameInRow="PurchasePrice" msprop:Generator_ColumnPropNameInTable="PurchasePriceColumn" type="xs:decimal" default="0" />
+              <xs:element name="StockInTrade" msprop:Generator_UserColumnName="StockInTrade" msprop:Generator_ColumnVarNameInTable="columnStockInTrade" msprop:Generator_ColumnPropNameInRow="StockInTrade" msprop:Generator_ColumnPropNameInTable="StockInTradeColumn" type="xs:int" default="0" />
+              <xs:element name="PurchaseID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="PurchaseID" msprop:Generator_ColumnVarNameInTable="columnPurchaseID" msprop:Generator_ColumnPropNameInRow="PurchaseID" msprop:Generator_ColumnPropNameInTable="PurchaseIDColumn" type="xs:long" />
+              <xs:element name="CanDelete" msprop:Generator_UserColumnName="CanDelete" msprop:Generator_ColumnVarNameInTable="columnCanDelete" msprop:Generator_ColumnPropNameInRow="CanDelete" msprop:Generator_ColumnPropNameInTable="CanDeleteColumn" type="xs:boolean" default="true" />
+              <xs:element name="CreationDate" msdata:ReadOnly="true" msprop:Generator_UserColumnName="CreationDate" msprop:Generator_ColumnPropNameInRow="CreationDate" msprop:Generator_ColumnVarNameInTable="columnCreationDate" msprop:Generator_ColumnPropNameInTable="CreationDateColumn" type="xs:dateTime" />
+              <xs:element name="ModifyDate" msprop:Generator_UserColumnName="ModifyDate" msprop:Generator_ColumnVarNameInTable="columnModifyDate" msprop:Generator_ColumnPropNameInRow="ModifyDate" msprop:Generator_ColumnPropNameInTable="ModifyDateColumn" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Product" />
+      <xs:field xpath="mstns:ProductID" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:Product" />
+      <xs:field xpath="mstns:ProductBarcode" />
+    </xs:unique>
+    <xs:unique name="Purchase_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Purchase" />
+      <xs:field xpath="mstns:PurchaseID" />
+    </xs:unique>
+    <xs:keyref name="FK_Products_Purchase" refer="Constraint1" msprop:rel_Generator_UserRelationName="FK_Products_Purchase" msprop:rel_Generator_RelationVarName="relationFK_Products_Purchase" msprop:rel_Generator_UserChildTable="Purchase" msprop:rel_Generator_UserParentTable="Product" msprop:rel_Generator_ParentPropName="ProductRow" msprop:rel_Generator_ChildPropName="GetPurchaseRows" msdata:AcceptRejectRule="Cascade">
+      <xs:selector xpath=".//mstns:Purchase" />
+      <xs:field xpath="mstns:ProductID" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,149 @@
+<?xml version="1.0" ?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>2.01</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 2.0.1.22 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>Azalea Software, Inc.</Company_Name>
+		<Address_1>3400 Harbor Ave SW #411</Address_1>
+		<Address_2 />
+		<City_Town>Seattle</City_Town>
+		<State_Province>WA</State_Province>
+		<Zip_Postal_Code>98126</Zip_Postal_Code>
+		<Country>US</Country>
+		<Company_WebSite_URL>http://www.azalea.com/</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Jerry</Author_First_Name>
+			<Author_Last_Name>Whiting</Author_Last_Name>
+			<Author_Email>salesinfo@azalea.com</Author_Email>
+			<Contact_First_Name>Pat</Contact_First_Name>
+			<Contact_Last_Name>Tite</Contact_Last_Name>
+			<Contact_Email>salesinfo@azalea.com</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email>salesinfo@azalea.com</Sales_Email>
+			<Support_Email>technicalsupport@azalea.com</Support_Email>
+			<General_Email>salesinfo@azalea.com</General_Email>
+			<Sales_Phone>206 336-9575</Sales_Phone>
+			<Support_Phone>206 336-9559</Support_Phone>
+			<General_Phone>206 336-9575</General_Phone>
+			<Fax_Phone>206 299-5600</Fax_Phone>
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>Code39Azalea.zip</Program_Name>
+		<Program_Version>1.0</Program_Version>
+		<Program_Release_Month>12</Program_Release_Month>
+		<Program_Release_Day>23</Program_Release_Day>
+		<Program_Release_Year>2005</Program_Release_Year>
+		<Program_Cost_Dollars>0.00</Program_Cost_Dollars>
+		<Program_Cost_Other_Code />
+		<Program_Cost_Other />
+		<Program_Type>Demo</Program_Type>
+		<Program_Release_Status>New Release</Program_Release_Status>
+		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
+		<Program_OS_Support>WinXP</Program_OS_Support>
+		<Program_Language>English</Program_Language>
+		<Program_Change_Info />
+		<Program_Specific_Category>Development Tools</Program_Specific_Category>
+		<Program_Category_Class>Business::Inventory &amp; Barcoding</Program_Category_Class>
+		<Program_Categories>barcode, bar code, Code 39</Program_Categories>
+		<Program_System_Requirements>Windows XP</Program_System_Requirements>
+		<Includes_JAVA_VM>N</Includes_JAVA_VM>
+		<Includes_VB_Runtime>N</Includes_VB_Runtime>
+		<Includes_DirectX>N</Includes_DirectX>
+		<File_Info>
+			<Filename_Versioned>Cde39Az1.zip</Filename_Versioned>
+			<Filename_Previous>Cde39Az1.zip</Filename_Previous>
+			<Filename_Generic>Cde39Az1.zip</Filename_Generic>
+			<Filename_Long>Code39Azalea.zip</Filename_Long>
+			<File_Size_Bytes>10249</File_Size_Bytes>
+			<File_Size_K>10</File_Size_K>
+			<File_Size_MB>0.01</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>N</Has_Expire_Info>
+			<Expire_Count />
+			<Expire_Based_On>Days</Expire_Based_On>
+			<Expire_Other_Info />
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>barcode, Code 39 barcode, Code 3 of 9 bar code</Keywords>
+			<Char_Desc_45>Code39Azalea is a free Code 39 demo font.</Char_Desc_45>
+			<Char_Desc_80>Code39Azalea is a free Code 39 demo TrueType font from Azalea's C39Tools.</Char_Desc_80>
+			<Char_Desc_250>Code39Azalea is a free Code 39 demo TrueType font. It creates numeric-only barcode symbols. Code39Azalea is a subset of C39Tools, Azalea's full font collection. C39Tools creates Code 39 barcodes from with any Windows.</Char_Desc_250>
+			<Char_Desc_450>Code39Azalea is a free Code 39 demo TrueType font. It creates numeric-only barcode symbols. Therefore any string you create must contain the digits 0-9. The asterisk (*) is used as the start and stop bar. For example, *123*. Code39Azalea is a subset of C39Tools, Azalea's full font collection. C39Tools creates Code 39 barcodes from with any Windows including Excel, Access, Visual Basic, C/C++, Crystal Reports and other applications.</Char_Desc_450>
+			<Char_Desc_2000>Code39Azalea is a free Code 39 demo TrueType font. It creates numeric-only barcode symbols. Therefore any string you create must contain the digits 0-9. The asterisk (*) is used as the start and stop bar. For example, *123*. Code39Azalea is a subset of C39Tools, Azalea's full font collection. C39Tools creates Code 39 barcodes from with any Windows including Excel, Access, Visual Basic, C/C++, Crystal Reports and other applications. We have a large library of free sample code at www.azalea.com/SampleCode Azalea Software publishes a full catalog of bar code fonts that support UPC, EAN, Code 128, Code 39, Interleaved 2 of 5, PDF 417, Data Matrix, and other barcode and OCR symbologies. Please visit our website at: www.azalea.com or call us at 1.206.341.9500</Char_Desc_2000>
+		</English>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>http://www.azalea.com/Code39</Application_Info_URL>
+			<Application_Order_URL>http://www.azalea.com/Code39/buyCode39.html</Application_Order_URL>
+			<Application_Screenshot_URL />
+			<Application_Icon_URL />
+			<Application_XML_File_URL>http://www.azalea.com/demo/pad_file.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>http://www.azalea.com/demo/Code39Azalea.zip</Primary_Download_URL>
+			<Secondary_Download_URL />
+			<Additional_Download_URL_1 />
+			<Additional_Download_URL_2 />
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions>Code39Azalea.zip contains Code39Azalea.ttf, a TrueType font that creates Code 39 bar code symbols. Code39Azalea is a free demo of C39Tools, our full Code 39 product - www.azalea.com/Code39
+
+Code39Azalea can be used for personal, non-commerical use but must not be distributed or resold outside of Code39Azalea.zip. Code39Azalea is to be used for evaluation and review purposes.
+
+Code39Azalea is copyright 2005 Jerry Whiting. All rights reserverd. If you have questions, please contact us at salesinfo@azalea.com or 1.206.341.9500</Distribution_Permissions>
+		<EULA>READ THIS LICENSING AGREEMENT CAREFULLY BEFORE USING A FONT FROM AZALEA SOFTWARE, INC.  BY INSTALLING THIS FONT, YOU INDICATE YOUR ACCEPTANCE OF THE TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT.  IF YOU DO NOT ACCEPT AND AGREE TO ALL OF THE TERMS AND CONDITIONS, PROMPTLY RETURN THE UNINSTALLED FONT AND ALL RELATED MATERIALS TO THE PLACE YOU OBTAINED THEM.  YOUR MONEY WILL BE RETURNED IN FULL.
+
+Azalea Software, Inc. Licensing Agreement
+
+1. License.  Azalea Software, Inc. ("Azalea") grants you a limited license to use the enclosed font(s), associated software, user manuals, and any related materials (collectively called the "Software" in this Agreement).  You may only use the Software on a single computer at any one time.  You may use the Software on different computers but the same software may not be used on two or more computers simultaneously.  You may not electronically transfer or share the Software from one computer to another via modem, network, or any other means.
+
+You may make one copy of this software for backup purposes or to transfer the software to a single hard disk provided you use the original for backup purposes.
+
+You may transfer a copy the Software and your rights under this License Agreement to a second person only if: (a) the second person agrees to all of the terms of this License Agreement; (b) you transfer the Software and documentation to the new user; (c) you erase or destroy all other copies of the Software which are in your possession or under your control; (d) you provide Azalea with thirty (30) days advance written notice of the transfer.
+
+You may not alter, modify, translate or adapt any part of the Software or related documentation without prior written consent of Azalea.  You may not disassemble, decompile, or otherwise reverse-engineer the Software, or create derivative works from it, whether in human-perceivable or machine-readable form.
+
+This Agreement does not convey any ownership of the Software or of any copy of the Software to you, but only the right to use the Software in strict accordance with this Agreement.  You acknowledge and agree that Azalea retains all title and ownership in the Software and any modifications, enhancements, updates or derivatives of the Software.
+
+2. Proprietary Rights.  The Software is the valuable trade secret property of Azalea and all Software bearing a copyright notice is, in addition, subject to the copyright laws.  UNAUTHORIZED COPYING, USE, OR DISCLOSURE OF THE SOFTWARE IS AN INFRINGEMENT OF AZALEA'S COPYRIGHT AND TRADE SECRET RIGHTS.  You agree that the use of a copyright notice on the Software shall not be taken to indicate that the Software has been published.
+
+3. Money-Back Guarantee and Limited Warranty.  For a period of thirty (30) days from the date of you obtained the Software, you may return the Software (including all user manuals), together with your receipt showing the amount you paid and the date you obtained the Software to the place of purchase, and obtain a full refund of the amounts you paid.
+
+Azalea warrants that the magnetic diskette(s) on which the Software is recorded is free from defects in materials and workmanship under normal use.  Azalea warrants that the Software will perform substantially in accordance with the specifications set forth in the documentation provided with the Software.
+
+The above warranties extend for ninety (90) days from the date of original delivery to customer as the user.  This warranty is made to customer if customer is the original licensed end-user.  No warranty is made to any other person.  Azalea does not warrant that the Software will meet customer's requirements or that the operation of the Software will not be uninterrupted or error-free.  The Software warranty does not cover any Software which has been altered or changed in any way by anyone other than Azalea.
+
+THE WARRANTIES SET FORTH ABOVE ARE IN LIEU OF ALL OTHER IMPLIED AND EXPRESS WARRANTIES, WHETHER ORAL OR WRITTEN.  AZALEA DISCLAIMS ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.  THE AGENTS, EMPLOYEES, DISTRIBUTORS AND DEALERS OF AZALEA ARE NOT AUTHORIZED TO MAKE ANY MODIFICATIONS TO THESE WARRANTIES, NOR ADDITIONAL WARRANTIES BINDING ON AZALEA.  ACCORDINGLY, ADDITIONAL STATEMENTS SUCH AS DEALER ADVERTISING OR REPRESENTATIONS, WHETHER ORAL OR WRITTEN, DO NOT CONSTITUTE WARRANTIES BY AZALEA AND SHOULD NOT BE RELIED UPON AS A WARRANTY OF AZALEA.
+
+4. Customer Remedies and Limitations of Liability.  During the warranty 
+period, Azalea will replace, without charge, on an exchange basis, any magnetic diskette which is not as warranted.  During the warranty period, if the Software does not perform as warranted, Azalea at its sole option will (a) provide, without charge, corrected software, (b) replace, without charge, software with a functionally similar program, or (c) refund the fees paid for licensing the software.  These are your sole and exclusive remedies for any breach of warranty.  You must return the defective item post-paid, postmarked within the time period stated above.  You must either insure the defective item being returned or assume the risk of loss or damage in transit.  Address all warranty claims to: Warranty Service Department, Azalea Software, Inc., 3400 Harbor Ave SW, #411, Seattle, WA, 98126, U.S.A.  Any claim under the above warranty must include a copy of your receipt or invoice or other proof of the date of delivery.  AZALEA SHALL NOT IN ANY CASE BE LIABLE FOR SPECIAL, INCIDENTAL, CONSEQUENTIAL, INDIRECT, OR OTHER DAMAGES ARISING FROM ANY BREACH OF THESE WARRANTIES, BREACH OF CONTRACT, NEGLIGENCE, OR ANY OTHER LEGAL THEORIES, EVEN IF AZALEA OR ITS AGENT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  IN NO CASE SHALL AZALEA'S LIABILITY EXCEED THE LICENSE FEES PAID BY YOU FOR THE SOFTWARE.
+
+5. Miscellaneous.  This Agreement shall be governed by the laws of the State of Washington, U.S.A. (not including laws relating to choice of law).  You and Azalea consent to the jurisdiction of and venue in the state and federal courts located in King County, Washington, U.S.A., in connection with any suit or action brought regarding the Software or this Agreement.  If any legal action is brought by either party against the other regarding the subject matter of this Agreement, the prevailing party shall be entitled to recover, in addition to any other relief, reasonable attorneys' fees and expenses.
+
+COPYRIGHT NOTICE
+
+Copyright 2005 Jerry Whiting. All rights reserved.
+Azalea Software, Inc.
+3400 Harbor Ave SW #411
+Seattle WA  98126
+www.azalea.com</EULA>
+	</Permissions>
+	<ASP>
+		<ASP_FORM>Y</ASP_FORM>
+		<ASP_Member>N</ASP_Member>
+		<ASP_Member_Number />
+	</ASP>
+</XML_DIZ_INFO>

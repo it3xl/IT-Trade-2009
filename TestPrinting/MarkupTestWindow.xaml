@@ -1,0 +1,78 @@
+﻿<Window x:Class="TestPrinting.MarkupTestWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="MarkupTestWindow" Height="300" Width="836">
+    <Grid>
+		
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="50"></ColumnDefinition>
+				<ColumnDefinition></ColumnDefinition>
+				<ColumnDefinition Width="50"></ColumnDefinition>
+				<ColumnDefinition Width="50"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			
+			<TextBlock Grid.Column="0">0</TextBlock>
+			<TextBlock Grid.Column="1">1</TextBlock>
+			<TextBlock Grid.Column="2">2</TextBlock>
+			<TextBlock Grid.Column="3">3</TextBlock>
+		</Grid>
+		
+		
+		<!--<FlowDocumentScrollViewer>
+			<FlowDocument>
+				<Table CellSpacing="2">
+					<Table.Columns>
+						<TableColumn/>
+						<TableColumn/>
+						<TableColumn/>
+						<TableColumn/>
+						<TableColumn/>
+					</Table.Columns>
+
+					<TableRowGroup>
+						<TableRow>
+							<TableCell>
+								<Paragraph>1111111</Paragraph>
+							</TableCell>
+							<TableCell TextAlignment="Left">
+								<Paragraph>222 222222222 2222 2222</Paragraph>
+							</TableCell>
+							<TableCell>
+								<Paragraph>33333 333333333333</Paragraph>
+							</TableCell>
+							<TableCell>
+								<Paragraph>444444444444444 4444</Paragraph>
+							</TableCell>
+							<TableCell>
+								<Paragraph>555555555 55555555555</Paragraph>
+							</TableCell>
+						</TableRow>
+						
+						<TableRow Background="LightGoldenrodYellow">
+							<TableCell>
+								<Paragraph>1111111</Paragraph>
+							</TableCell>
+							<TableCell>
+								<Paragraph TextAlignment="Left">222 222222222 2222 2222</Paragraph>
+							</TableCell>
+							<TableCell>
+								<Paragraph>33333 333333333333</Paragraph>
+							</TableCell>
+							<TableCell>
+								<Paragraph>444444444444444 4444</Paragraph>
+							</TableCell>
+							<TableCell>
+								<Paragraph>555555555 55555555555</Paragraph>
+							</TableCell>
+						</TableRow>
+					</TableRowGroup>
+				</Table>
+				
+				<Paragraph>
+					<Bold >ssss</Bold> <Run ></Run>
+				</Paragraph>
+			</FlowDocument>
+		</FlowDocumentScrollViewer>-->
+    </Grid>
+</Window>

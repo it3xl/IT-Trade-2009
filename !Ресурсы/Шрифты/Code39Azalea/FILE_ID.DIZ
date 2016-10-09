@@ -1,0 +1,8 @@
+CODE39AZALEA v1.0  - Code39Azalea includes a 
+TrueType font used to make Code 39 barcodes.
+Free Windows sample code is on our website. 
+Code39Azalea contains 0-9 and the asterisk, 
+the Code 39 start & stop bars. 123* scans as 
+123. Code39Azalea is a subset of C39Tools, 
+a full-featured barcode font collection from 
+Azalea Software www.azalea.com 206.341.9500
