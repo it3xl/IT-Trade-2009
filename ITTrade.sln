@@ -1,8 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITTrade", "ITTrade\ITTrade.csproj", "{51716157-25C2-4ABC-BC75-1DFC27BEAED8}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{DE92BCD7-FF13-437C-B60A-0E256A67B9D6}"
 	ProjectSection(SolutionItems) = preProject
 		!Документы\Priner-settings.png = !Документы\Priner-settings.png
@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 		!Документы\Бизнес-правила ITTrade.docx = !Документы\Бизнес-правила ITTrade.docx
 		!Документы\Настройки оборудования.docx = !Документы\Настройки оборудования.docx
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITTrade", "ITTrade\ITTrade.csproj", "{51716157-25C2-4ABC-BC75-1DFC27BEAED8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFToolkit", "WPFToolkitSourcesAndBinaries\Toolkit-release\WPFToolkit.csproj", "{9606A078-7135-4CE7-879E-39FCF527F1A3}"
 EndProject

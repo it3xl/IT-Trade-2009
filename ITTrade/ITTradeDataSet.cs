@@ -1,37 +1,39 @@
 ﻿using System.ComponentModel;
-namespace ITTrade {
-    
-    
-    public partial class ITTradeDataSet {
-		//partial class ProductDataTable : IDataErrorInfo
-		//{
-		//    #region IDataErrorInfo Members
+namespace ITTrade
+{
 
-		//    public string Error
-		//    {
-		//        get { throw new System.NotImplementedException(); }
-		//    }
 
-		//    public string this[string columnName]
-		//    {
-		//        get
-		//        {
-					
-		//            if (columnName == "")
-		//            {
+    public partial class ITTradeDataSet
+    {
+        //partial class ProductDataTable : IDataErrorInfo
+        //{
+        //    #region IDataErrorInfo Members
 
-		//            }
+        //    public string Error
+        //    {
+        //        get { throw new System.NotImplementedException(); }
+        //    }
 
-		//            // ошибок нет.
-		//            return null;
-		//        }
-		//    }
+        //    public string this[string columnName]
+        //    {
+        //        get
+        //        {
 
-		//    #endregion
-		//}
-		partial class ProductDataTable
-		{
-		}
-	}
+        //            if (columnName == "")
+        //            {
+
+        //            }
+
+        //            // ошибок нет.
+        //            return null;
+        //        }
+        //    }
+
+        //    #endregion
+        //}
+        partial class ProductDataTable
+        {
+        }
+    }
 }
 
